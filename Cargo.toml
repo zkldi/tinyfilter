@@ -1,0 +1,29 @@
+[package]
+name = "tinyfilter"
+version = "1.0.0"
+edition = "2024"
+description = "A tiny filtering language, safe for untrusted user input"
+repository = "https://github.com/zkldi/tinyfilter"
+license = "MIT"
+exclude = ["fuzz", "javascript", "wasm"]
+
+[dependencies]
+thiserror = "2"
+
+[dev-dependencies]
+proptest = "1"
+
+[lints]
+workspace = true
+
+[workspace]
+members = ["wasm"]
+resolver = "2"
+
+[workspace.lints.clippy]
+manual_range_contains = "allow"
+use_self = "deny"
+new_without_default = "allow"
+
+[workspace.dependencies]
+tinyfilter = { path = "." }

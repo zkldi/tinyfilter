@@ -1,0 +1,29 @@
+[package]
+name = "tinyfilter-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2024"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+tinyfilter = { path = ".." }
+
+[[bin]]
+name = "source"
+path = "fuzz_targets/source.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "eval"
+path = "fuzz_targets/eval.rs"
+test = false
+doc = false
+bench = false
+
+[workspace]
+members = ["."]

@@ -1,0 +1,36 @@
+{
+	"name": "tinyfilter",
+	"version": "1.0.0",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./generated/tinyfilter_wasm.d.ts",
+			"node": "./generated/node/tinyfilter_wasm.js",
+			"import": "./generated/tinyfilter_wasm.js",
+			"default": "./generated/tinyfilter_wasm.js"
+		}
+	},
+	"files": [
+		"generated"
+	],
+	"devDependencies": {
+		"wasm-pack": "^0.15.0"
+	},
+	"scripts": {
+		"build": "bun run build.ts",
+		"prepack": "bun run build"
+	},
+	"description": "",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zkldi/tinyfilter.git"
+	},
+	"homepage": "https://github.com/zkldi/tinyfilter",
+	"bugs": {
+		"url": "https://github.com/zkldi/tinyfilter/issues"
+	},
+	"main": "index.js",
+	"keywords": [],
+	"author": "zkldi",
+	"license": "MIT"
+}

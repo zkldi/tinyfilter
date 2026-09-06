@@ -1,0 +1,19 @@
+[package]
+name = "tinyfilter-wasm"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+js-sys = "0.3"
+tinyfilter = { workspace = true }
+wasm-bindgen = "0.2"
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3"
+
+[lints]
+workspace = true
