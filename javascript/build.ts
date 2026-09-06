@@ -45,3 +45,10 @@ await Bun.write(
 	`${import.meta.dir}/generated/node/package.json`,
 	JSON.stringify({ type: "commonjs" }, null, "\t") + "\n",
 );
+
+// npm only includes files from this directory, so copy the repository README
+// into the package root for publication.
+await Bun.write(
+	`${import.meta.dir}/README.md`,
+	await Bun.file(`${import.meta.dir}/../README.md`).text(),
+);
